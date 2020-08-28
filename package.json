@@ -1,0 +1,27 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Either of these options starts the API at `localhost:3030`. The API uses JSON Web tokens (JWT) for authorization by default. To disable JWT for testing or development, you can set the environment variable `PRISM_JWTAUTHDISABLED=TRUE`.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "pg": "^8.3.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/USACE/prism-api.git"
+  },
+  "keywords": [
+    "\u001b[6~"
+  ],
+  "bugs": {
+    "url": "https://github.com/USACE/prism-api/issues"
+  },
+  "homepage": "https://github.com/USACE/prism-api#readme"
+}
