@@ -3,7 +3,7 @@ const app = express();
 const cors = require("cors");
 const pool = require("./db");
 
-//middleware
+//Middleware
 app.use(cors());
 app.use(express.json());
 
@@ -16,8 +16,8 @@ app.use(express.json());
 //--------------------------------
 //Original Authorizations (/auths)
 //--------------------------------
+
 //create auth
-//TODO
 
 //get all auths
 app.get("/auths", async (req, res) => {
@@ -46,30 +46,15 @@ app.get("/auths/:id", async (req, res) => {
   }
 });
 
-//update an auth
-// app.put("/auths/:id", async (req, res) => {
-//   try {
-//     const { id } = req.params;
-//     const { description } = req.body;
-//     const updateAuth = await pool.query(
-//       'UPDATE "S0CWB111"."PL_ORIGINAL_AUTHORIZATIONS" SET description = $1 WHERE "PL_KEY" = $2',
-//       [description, id]
-//     );
-
-//     res.json("Auth was updated");
-//   } catch (err) {
-//     console.error(err.message);
-//   }
-// });
+//update an auth?
 
 //delete an auth?
-//TODO
 
 //--------------------
 //AATBA (/tbas)
 //--------------------
+
 //create tba
-//TODO
 
 //get all tbas
 app.get("/tbas", async (req, res) => {
@@ -103,6 +88,7 @@ app.get("/tbas/:id", async (req, res) => {
 //--------------------
 //Amendments (/amends)
 //--------------------
+
 //create amendment
 app.post("/amends", async (req, res) => {
   try {
@@ -130,7 +116,7 @@ app.get("/amends", async (req, res) => {
   }
 });
 
-//get an amendment
+//get amendments for a specific pl_key
 app.get("/amends/:id", async (req, res) => {
   try {
     const { id } = req.params;
@@ -139,7 +125,7 @@ app.get("/amends/:id", async (req, res) => {
       [id]
     );
 
-    res.json(auth.rows[0]);
+    res.json(auth.rows);
   } catch (err) {
     console.error(err.message);
   }
@@ -195,8 +181,7 @@ app.get("/costs/:id", async (req, res) => {
   }
 });
 
-//remove a cost
-//TODO
+//remove a cost?
 
 app.listen(5000, () => {
   console.log("server has started on port 5000");
